@@ -9,15 +9,16 @@ public class SetTest06 {
 
     public static void main(String[] args) {
 
-        Set<SetProductTest06> set = new HashSet<>();
+        Set<SetProductTest06> set = new TreeSet<>();
 
         set.add(new SetProductTest06("TV", 900.00));
         set.add(new SetProductTest06("Notebook", 1200.00));
         set.add(new SetProductTest06("Tablet", 400.00));
 
-        SetProductTest06 prod = new SetProductTest06("Notebook", 1200.00);
+        for (SetProductTest06 p : set){
+            System.out.println(p);
 
-        System.out.println(set.contains(prod));
+        }
 
 
 

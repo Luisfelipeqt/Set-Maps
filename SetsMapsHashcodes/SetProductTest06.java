@@ -1,8 +1,9 @@
 package Minterfaces.Arquivos.SetsMapsHashcodes;
 
+import java.util.Locale;
 import java.util.Objects;
 
-public class SetProductTest06 {
+public class SetProductTest06 implements Comparable<SetProductTest06>{
     private String name;
     private Double price;
 
@@ -37,5 +38,18 @@ public class SetProductTest06 {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getPrice());
+    }
+
+    @Override
+    public String toString() {
+        return "SetProductTest06{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
+    @Override
+    public int compareTo(SetProductTest06 other) {
+        return name.toUpperCase(Locale.ROOT).compareTo(other.getName().toUpperCase());
     }
 }
